@@ -17,11 +17,10 @@ ifdef ($(TOPLEVELDIR),)
 	@echo "TOPLEVELDIR directory is not set."
 
 else
-	@echo "TOPLEVELDIR is set to:" "$(SRCDIR)"
 
-.PHONY all
+.PHONY: all
 
-all:	helloworld
+all:	helloworldE
 
 endif	# End else
 
@@ -29,11 +28,10 @@ helloworldE:	helloworld$E
 
 helloworld$E: helloworld.o
 	$(CC) $(CFLAGS) -o helloworld$E helloworld.o
-	$(RMDIR) -f $(BUILDDIR)/helloworld
-	$(MKDIR) -p $(BUILDDIR)/helloworld
-	
-helloworld.o:	helloworld.c
-	 $(CC) $(CFLAGS) -I $(SRCDIR)/include/ -c helloworld.c
+
+helloworld.o:	$(SRCDIR)/helloworld/helloworld.c
+	 $(MKDIR) $(BUILDDIR)/helloworld
+	 $(CC) $(CFLAGS) -I $(SRCDIR)/include/ -c $(SRCDIR)/helloworld/helloworld.c
 
 clean:
 	 $(RMDIR) -vf $(BUILDDIR)
