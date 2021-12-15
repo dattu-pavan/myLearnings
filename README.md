@@ -5,3 +5,4 @@
 #   1: TOPLEVELDIR
 
 The Built binaries are under TOPLEVELDIR/debug
+You can run the "make clean" to remove all the build binaries.
