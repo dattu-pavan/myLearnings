@@ -3,3 +3,5 @@
 
 # Set the following paths in the system environment variables
 #   1: TOPLEVELDIR
+
+The Built binaries are under TOPLEVELDIR/debug
